@@ -14,19 +14,19 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getLatestNewsByTopics(this.topicName);
+    //this.getLatestNewsByTopics(this.topicName);
     this.topicName='';
     
   }
 
-  private getLatestNewsByTopics(topicName:string){
-    this.newsService.getLatestNews(topicName).subscribe({
-      next : (response) =>{
-        console.log(response);
-      }
-    })
+  // private getLatestNewsByTopics(topicName:string){
+  //   this.newsService.getLatestNews(topicName).subscribe({
+  //     next : (response) =>{
+  //       console.log(response);
+  //     }
+  //   })
 
-  }
+  // }
 
 
   

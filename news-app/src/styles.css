@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --blue-1:#3C429E;
+    --blue-2:#4C52AD;
+    --yellow-1:#FAC742;
+    --white:#fff;
+    --grey-1:#EDEDED;
+    --shadow-dark: rgba(0,0,0,0.3);
+    --shadow-light: rgba(255,255,255,0.1);
+}
+
+.container{
+    position:relative;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--blue-2);
+    box-shadow: 10px 10px 10px var(--shadow-light);
+    top: 0;
+    left: 0px;
+    border-radius: 10px;
+    
+    
+}
+.header{
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: flex-start;
+    display:flex;
+    align-items: center;
+    height: 15vh;
+    flex-direction: row;
+    
+    
+}
+.header_links{
+    
+    color: #fff;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 10vh;
+    justify-content: space-between;
+    
+    
+}
+.header_Search{
+    width: 24px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-right: 0px;
+}
+.carasol-1{
+    width: 100%;
+    height: 40px;
+    background-color: #EDEDED;
+    border-radius: 15px;
+}
