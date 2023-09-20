@@ -8,52 +8,70 @@ import { News } from './models/news.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  
-  topicName:string='sports';
-  // imageUrls:any;
-  // imageUrl1:string='';
-  newsData?:News;
-  articleTitle:string='';
-  imageUrl:Array<any>=[];
-  title:Array<any>=[];
-  constructor(private newsService:NewsService){}
+
+  topicName: string = 'politics';
+  topicSports: string = 'sports'
+  newsData?: News;
+  sportsData?: News;
+  articleTitle: string = '';
+  imageUrl: Array<any> = [];
+  sportImageUrl: Array<any> = [];
+  title: Array<string> = [];
+  sportTitle: Array<string> = [];
+  link: Array<any> = [];
+  constructor(private newsService: NewsService) { }
 
 
 
   ngOnInit(): void {
     this.getLatestNewsByTopics(this.topicName);
-    this.topicName='';
-    
+    this.topicName = '';
+    this.getSportsNews(this.topicSports);
+    this.topicSports = '';
+
+
   }
 
-  private getLatestNewsByTopics(topicName:string){
+  private getLatestNewsByTopics(topicName: string) {
     this.newsService.getLatestNews(topicName).subscribe({
-      next : (response) =>{
-        
+      next: (response) => {
+
         console.log(response);
-        this.newsData=response;
-        response.results.forEach((item)=>{
-          if(item.image_url!==null||undefined){
+        this.newsData = response;
+        response.results.forEach((item) => {
+          if (item.image_url !== null || undefined) {
             this.imageUrl.push(item.image_url)
-            //this.imageUrls =item.image_url;
-          //console.log(this.imageUrls);
-          //this.imageUrl1=this.imageUrls.image_url;
+
           }
-          if(item.title!==null||undefined){
+          if (item.title !== null || undefined) {
             this.title.push(item.title);
           }
-          
+          this.link.push(item.link);
+
         })
         console.log(this.imageUrl);
         console.log(this.title);
-        
-        
-        //this.imageUrl=response.results[0].image_url;
+
       }
     })
 
+
   }
-
-
-  
+  private getSportsNews(topicSports: string) {
+    this.newsService.getLatestSportNews(this.topicSports).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.sportsData = response;
+        response.results.forEach((item) => {
+          if (item.image_url !== null || undefined) {
+            this.sportImageUrl.push(item.image_url);
+          }
+          if (item.title !== null || undefined && item.title['length']<200) {
+            this.sportTitle.push(item.title);
+          }
+          console.log(this.sportTitle);
+        })
+      }
+    })
+  }
 }
