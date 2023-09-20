@@ -18,8 +18,6 @@
     top: 0;
     left: 0px;
     border-radius: 10px;
-
-
 }
 
 .header {
@@ -50,11 +48,14 @@
 }
 
 .header_Search {
-    width: 24px;
-    height: 20px;
+    width: 60px;
+    height: 30px;
     display: flex;
     flex-direction: row;
     margin-right: 0px;
+    position: relative;
+    top: -18px;
+    right: -300px;
 }
 .Carasol-label{
     font-size: 14px;
@@ -126,7 +127,7 @@
     
     position: relative;
     border-radius: 5px;
-    width: 180px;
+    width: 190px;
     padding: 5px;
     background-color: var(--blue-1);
     background-color: cornflowerblue;
