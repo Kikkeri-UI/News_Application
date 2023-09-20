@@ -22,4 +22,14 @@ export class NewsService {
 
   }
 
+  getLatestSportNews(topicSports:string):Observable<News>{
+    return this.Http.get<News>(environment.newsAPIbaseUrl,{
+      
+      params:new HttpParams()
+      .set(environment.newsAPIKey,environment.newsAPIKeyValue)
+      .set('q',topicSports)
+    })
+
+  }
+
 }

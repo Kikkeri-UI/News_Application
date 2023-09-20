@@ -123,12 +123,17 @@
     top: 5;
 }
 .read-button{
-    width: 200px;
-    height: 30px;
+    
+    position: relative;
     border-radius: 5px;
+    width: 180px;
+    padding: 5px;
+    background-color: var(--blue-1);
     background-color: cornflowerblue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-bottom: 2px;
+    left: 5px;
+    right: 5px;
 }
 
 
